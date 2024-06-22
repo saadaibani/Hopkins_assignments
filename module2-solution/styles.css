@@ -1,1 +1,105 @@
+* {
+    box-sizing: border-box;
+}
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-bottom: 2px solid #388E3C;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Main container for sections */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+/* Section styles */
+.section {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 10px;
+    background-color: #e2e2e2;
+    position: relative;
+    flex: 1 1 100%;
+    /* Default to full width for mobile */
+}
+
+/* Specific background colors for each section */
+#section1 {
+    background-color: #FFEB3B;
+}
+
+#section2 {
+    background-color: #FFCDD2;
+}
+
+#section3 {
+    background-color: #C8E6C9;
+}
+
+/* Section title styles */
+.section-title {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 1.25em;
+    border-radius: 4px;
+}
+
+/* Ensure the content doesn't overlap with the title */
+.section p {
+    margin-top: 40px;
+    /* Adjust based on title height */
+}
+
+/* Desktop view */
+@media (min-width: 992px) {
+    .section {
+        flex: 1 1 calc(33.33% - 20px);
+        /* 3 sections per row, with some space around */
+    }
+}
+
+/* Tablet view */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    #section1,
+    #section2 {
+        flex: 1 1 calc(50% - 20px);
+        /* 2 sections per row */
+    }
+
+    #section3 {
+        flex: 1 1 100%;
+        /* 1 section per row */
+    }
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+    .section {
+        flex: 1 1 100%;
+        /* 1 section per row */
+    }
+}
